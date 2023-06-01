@@ -1,4 +1,4 @@
-package com.berkeerkec.movieapp.ui.theme
+package com.berkeerkec.movieapp.presentation.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

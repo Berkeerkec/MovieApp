@@ -27,6 +27,7 @@ import androidx.navigation.compose.rememberNavController
 import com.berkeerkec.movieapp.presentation.Screen
 import com.berkeerkec.movieapp.presentation.movies.MoviesEvent
 import com.berkeerkec.movieapp.presentation.movies.MoviesViewModel
+import com.berkeerkec.movieapp.util.Constansts.IMDB_ID
 
 @Composable
 fun MovieScreen(
@@ -52,7 +53,7 @@ fun MovieScreen(
             LazyColumn(modifier = Modifier.fillMaxSize()){
                 items(state.movieList){ movie ->
                     MovieListRow(movie = movie, onItemClick = {
-                        //navController.navigate(Screen.MovieDetailScreen.route + "id")
+                        navController.navigate(Screen.MovieDetailScreen.route + "/${movie.imdbID}")
                     })
                 }
             }

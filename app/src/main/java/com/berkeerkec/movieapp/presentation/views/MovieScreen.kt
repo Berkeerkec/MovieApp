@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.berkeerkec.movieapp.presentation.Screen
 import com.berkeerkec.movieapp.presentation.movies.MoviesEvent
 import com.berkeerkec.movieapp.presentation.movies.MoviesViewModel
 
@@ -50,7 +51,9 @@ fun MovieScreen(
             )
             LazyColumn(modifier = Modifier.fillMaxSize()){
                 items(state.movieList){ movie ->
-                    Text(text = movie.Title, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center, color = Color.White)
+                    MovieListRow(movie = movie, onItemClick = {
+                        //navController.navigate(Screen.MovieDetailScreen.route + "id")
+                    })
                 }
             }
         }
@@ -88,7 +91,7 @@ fun MovieSearchBar(
                 .fillMaxWidth()
                 .shadow(5.dp, CircleShape)
                 .background(Color.White, CircleShape)
-                .padding(20.dp)
+                .padding(horizontal = 20.dp)
                 .onFocusChanged {
                     isHintDisplayed = it.isFocused != true && text.isEmpty()
                 }

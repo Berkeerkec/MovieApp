@@ -1,4 +1,4 @@
-package com.berkeerkec.movieapp.presentation.views
+package com.berkeerkec.movieapp.presentation.movies.views
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
